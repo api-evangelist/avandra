@@ -1,23 +1,68 @@
 aid: avandra
+
 name: Avandra
-description: 'Avandra is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Avandra Imaging provides a federated network for clinical imaging and associated clinical data, enabling secure image exchange, longitudinal
+  data access, and AI model development for health systems, pharmaceutical companies, and researchers. The platform connects hospitals, imaging
+  centers, and other care providers to create a trusted data marketplace that supports regulatory‑grade research and real‑world evidence generation,
+  accelerating medical breakthroughs and improving patient care.
+
 url: https://raw.githubusercontent.com/api-evangelist/avandra/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Stub
+- Secondary-Market
+- API-Evangelist
+- Placeholder
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/avandra-hosts.yml
+- type: Vendors
+  url: vendors/avandra-vendors.yml
+- type: DomainSecurity
+  url: security/avandra-domain-security.yml
 - type: Website
   url: https://www.nasdaqprivatemarket.com/
+
+apis:
+- name: Avandra Imaging API
+  description: Avandra Imaging provides a federated network for clinical imaging and associated clinical data via its platform.
+  humanURL: https://www.avandra.io
+  baseURL: null
+  aid: avandra:avandra-imaging-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The provider's website https://www.avandra.io returns HTML but no OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL files were found.
+  evidence:
+  - url: https://www.avandra.io
+    status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
